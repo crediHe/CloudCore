@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+:root {
+  /* Material Design 3 浅色色板 */
+  --md-primary: #6000a7;
+  --md-on-primary: #ffffff;
+  --md-primary-container: #e2c3ff;
+  --md-surface: #fcf8f9;
+  --md-surface-container-lowest: #ffffff;
+  --md-surface-container-low: #f6f3f4;
+  --md-surface-container: #f0edee;
+  --md-surface-container-high: #eae7e8;
+  --md-on-surface: #1b1b1c;
+  --md-on-surface-variant: #4c4354;
+  --md-outline-variant: #cfc2d6;
+  --md-background: #fcf8f9;
+
+  font-family:
+    'Geist',
+    system-ui,
+    -apple-system,
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  color: var(--md-on-surface);
+  background: var(--md-background);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ---- 勾选框（SceneTree / PropertiesPanel 共用） ---- */
+.md-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  border: 1.5px solid var(--md-on-surface-variant);
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.md-checkbox:hover {
+  border-color: var(--md-primary);
+}
+.md-checkbox:checked {
+  background: var(--md-primary);
+  border-color: var(--md-primary);
+}
+.md-checkbox:checked::after {
+  content: '';
+  width: 8px;
+  height: 4px;
+  border-left: 2px solid var(--md-on-primary);
+  border-bottom: 2px solid var(--md-on-primary);
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+/* 半选态（属性面板多选批量的"部分开启"）：同款填充底色，勾换成一横。
+   刻意不用 :checked::after 的钩子——`appearance: none` 下原生半选标记不显示 */
+.md-checkbox:indeterminate {
+  background: var(--md-primary);
+  border-color: var(--md-primary);
+}
+.md-checkbox:indeterminate::after {
+  content: '';
+  width: 8px;
+  height: 2px;
+  /* 清掉 :checked::after 的勾（同一伪元素上两条规则会合并，不显式复位就会露出半截勾） */
+  border: none;
+  transform: none;
+  background: var(--md-on-primary);
+}
+
+/* ---- 面板标题（SceneTree / PropertiesPanel / Console 共用） ---- */
+.panel-title {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--md-on-surface-variant);
+  padding: 8px 12px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ---- 玻璃态面板 ---- */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+}
+
+/* ---- 卡片 ---- */
+.card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s ease;
+}
+.card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ---- 按钮 ---- */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+.btn-primary {
+  background: var(--md-primary);
+  color: var(--md-on-primary);
+  padding: 10px 20px;
+}
+.btn-primary:hover {
+  filter: brightness(1.15);
+}
+.btn-secondary {
+  background: var(--md-surface-container-highest, #ffffff);
+  color: var(--md-on-surface);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}
+.btn-secondary:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* ---- 滚动条 ---- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}

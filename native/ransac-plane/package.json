@@ -1,0 +1,11 @@
+{
+  "name": "ransac-plane",
+  "version": "1.0.0",
+  "description": "C++ RANSAC 平面拟合（对齐 PCL SACSegmentation 的 SACMODEL_PLANE + SAC_RANSAC）node-addon。N-API 编译产物对 Electron 与 Node 通用（ABI 稳定），供渲染进程 require 后贴着 three.js 点云缓冲零拷贝计算。",
+  "private": true,
+  "main": "build/Release/ransac_plane.node",
+  "scripts": {
+    "build": "node-gyp rebuild"
+  },
+  "license": "MIT"
+}

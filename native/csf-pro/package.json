@@ -1,0 +1,11 @@
+{
+  "name": "csf-pro",
+  "version": "1.0.0",
+  "description": "C++ 精准地面分割（CSF 布料模拟滤波，老算法液体贴合语义，丘陵/山脉等高精度）node-addon。N-API 编译产物对 Electron 与 Node 通用（ABI 稳定），供渲染进程 require 后贴着 three.js 点云缓冲零拷贝计算，AsyncProgressWorker 迭代级进度回报 + 可取消，输出地面/非地面顶点下标。",
+  "private": true,
+  "main": "build/Release/csf_pro.node",
+  "scripts": {
+    "build": "node-gyp rebuild"
+  },
+  "license": "MIT"
+}

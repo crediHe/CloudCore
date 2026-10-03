@@ -1,0 +1,11 @@
+{
+  "name": "statistical-filter",
+  "version": "1.0.0",
+  "description": "C++ 统计滤波（Statistical Outlier Removal）node-addon。N-API 编译产物对 Electron 与 Node 通用（ABI 稳定），供渲染进程 require 后贴着 three.js 点云缓冲零拷贝计算。",
+  "private": true,
+  "main": "build/Release/statistical_filter.node",
+  "scripts": {
+    "build": "node-gyp rebuild"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,101 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-electron/
+out/
+
+# Editor & IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+
+# Electron
+*.local
+
+# Cache
+.cache/
+.parcel-cache
+.cache
+.eslintcache
+.stylelintcache
+.turbo/
+.pnpm-store/
+
+# TypeScript
+*.tsbuildinfo
+
+# Testing
+playwright-report/
+test-results/
+coverage/
+.nyc_output/
+
+# Build artifacts
+*.zip
+*.exe
+*.deb
+*.rpm
+*.pkg
+*.dmg
+*.snap
+
+# Native addon build output (node-gyp)
+# build/ 中间产物（.obj/.pdb/.dll 等）忽略，但 Release 下的 .node 产物提交进仓库：
+# 客户/同事机器没有 VS Build Tools + Python，克隆后须能直接 require 原生模块。
+native/**/build/*
+native/**/build/Release/*
+native/**/*.node
+!native/**/build/Release/
+!native/**/build/Release/*.node
+
+# Local configurations
+.local
+.env.local
+
+# 录制 / 截图脚本的临时产物（合成点云、逐帧 PNG 等，不入库）
+tmp-rec/
+
+# Claude Code 机器本地配置（团队共享的配置是 .claude/settings.json）
+.claude/settings.local.json
+
+# 参考资料快照：从微信公众号抓取的网页快照与第三方源码示例，已移出仓库
+# （版权与体积考虑）。留条目防止再次被误提交。
+doc/
+
+# 参考资料索引（第三方文章链接与出处考证）：仅本地保留，不入库。
+# docs/images/ 不受影响，README 的截图/GIF 仍可正常提交。
+docs/references.md
+
+# 内部工作文档：AI 工作说明与集成过程总结，仅本地保留，不入库。
+# （保留本地是为了 Claude Code 照常读取；gitignore 不影响本地文件。）
+CLAUDE.md
+GICP_INTEGRATION_SUMMARY.md

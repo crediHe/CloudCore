@@ -1,0 +1,146 @@
+{
+  "name": "cloudcore",
+  "productName": "CloudCore",
+  "version": "2.1.2",
+  "description": "CloudCore —— Windows 桌面端点云（LAS/PLY）可视化与处理工具，13 个 C++ N-API 原生模块与 three.js 顶点缓冲零拷贝计算",
+  "type": "module",
+  "keywords": [
+    "point-cloud",
+    "lidar",
+    "las",
+    "ply",
+    "three.js",
+    "electron",
+    "vue",
+    "vite",
+    "typescript",
+    "native-addon",
+    "node-api",
+    "cloudcompare",
+    "pcl",
+    "csf",
+    "treeiso",
+    "ransac",
+    "icp",
+    "gicp"
+  ],
+  "homepage": "https://gitee.com/hexingchi/pointcloud_electron_v2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitee.com/hexingchi/pointcloud_electron_v2.git"
+  },
+  "license": "GPL-3.0-only",
+  "author": "何星驰",
+  "scripts": {
+    "dev": "chcp 65001 && vite",
+    "build": "chcp 65001 && vue-tsc && vite build && electron-builder",
+    "build:win": "chcp 65001 && vue-tsc && vite build && electron-builder --win zip",
+    "build:win:local": "chcp 65001 && vue-tsc && vite build && electron-builder --win --publish=never",
+    "build:test": "chcp 65001 && vue-tsc && vite build",
+    "build:native": "chcp 65001 && node-gyp rebuild --directory=native/radius-filter && node-gyp rebuild --directory=native/voxel-filter && node-gyp rebuild --directory=native/csf-lidar && node-gyp rebuild --directory=native/csf-pro && node-gyp rebuild --directory=native/statistical-filter && node-gyp rebuild --directory=native/treeiso && node-gyp rebuild --directory=native/lod-octree && node-gyp rebuild --directory=native/ransac-plane && node-gyp rebuild --directory=native/normal-estimate && node-gyp rebuild --directory=native/ransac-cylinder && node-gyp rebuild --directory=native/euclidean-cluster && node-gyp rebuild --directory=native/registration && node-gyp rebuild --directory=native/powerline",
+    "preview": "vite preview",
+    "generate-icons": "tsx scripts/generate-icons.ts",
+    "release": "commit-and-tag-version",
+    "release:dry": "commit-and-tag-version --dry-run",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "test:unit": "vitest run",
+    "test:e2e": "pnpm build:test && playwright test",
+    "test": "pnpm test:unit && pnpm test:e2e"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,vue}": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "axios": "^1.18.1",
+    "electron-log": "^5.4.4",
+    "electron-store": "^11.0.2",
+    "electron-updater": "^6.8.9",
+    "three": "^0.185.1",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.61.1",
+    "@types/three": "^0.185.4",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/test-utils": "^2.4.11",
+    "commit-and-tag-version": "^12.7.3",
+    "electron": "^30.0.1",
+    "electron-builder": "^24.13.3",
+    "eslint": "^10.6.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.6",
+    "eslint-plugin-vue": "^10.9.2",
+    "globals": "^17.7.0",
+    "jsdom": "^29.1.1",
+    "lint-staged": "^17.0.8",
+    "node-addon-api": "^8.9.2",
+    "node-gyp": "^13.0.2",
+    "png-to-ico": "^3.0.1",
+    "prettier": "^3.9.4",
+    "sharp": "^0.35.2",
+    "simple-git-hooks": "^2.13.1",
+    "tsx": "^4.22.4",
+    "typescript": "^5.2.2",
+    "typescript-eslint": "^8.62.1",
+    "vite": "^5.1.6",
+    "vite-plugin-electron": "^0.28.6",
+    "vite-plugin-electron-renderer": "^0.14.5",
+    "vitest": "2.1.8",
+    "vue-eslint-parser": "^10.4.1",
+    "vue-tsc": "^2.0.26"
+  },
+  "packageManager": "pnpm@11.9.0",
+  "main": "dist-electron/main.js",
+  "build": {
+    "appId": "com.hexingchi.cloudcore",
+    "productName": "CloudCore",
+    "files": [
+      "dist-electron/**/*",
+      "dist/**/*",
+      "index.html",
+      "package.json",
+      "native/radius-filter/build/Release/radius_filter.node",
+      "native/voxel-filter/build/Release/voxel_filter.node",
+      "native/csf-lidar/build/Release/csf_lidar.node",
+      "native/csf-pro/build/Release/csf_pro.node",
+      "native/statistical-filter/build/Release/statistical_filter.node",
+      "native/treeiso/build/Release/treeiso.node",
+      "native/lod-octree/build/Release/lod_octree.node",
+      "native/ransac-plane/build/Release/ransac_plane.node",
+      "native/normal-estimate/build/Release/normal_estimate.node",
+      "native/ransac-cylinder/build/Release/ransac_cylinder.node",
+      "native/euclidean-cluster/build/Release/euclidean_cluster.node",
+      "native/registration/build/Release/registration.node",
+      "native/powerline/build/Release/powerline.node"
+    ],
+    "asarUnpack": [
+      "native/radius-filter/build/Release/radius_filter.node",
+      "native/voxel-filter/build/Release/voxel_filter.node",
+      "native/csf-lidar/build/Release/csf_lidar.node",
+      "native/csf-pro/build/Release/csf_pro.node",
+      "native/statistical-filter/build/Release/statistical_filter.node",
+      "native/treeiso/build/Release/treeiso.node",
+      "native/lod-octree/build/Release/lod_octree.node",
+      "native/ransac-plane/build/Release/ransac_plane.node",
+      "native/normal-estimate/build/Release/normal_estimate.node",
+      "native/ransac-cylinder/build/Release/ransac_cylinder.node",
+      "native/euclidean-cluster/build/Release/euclidean_cluster.node",
+      "native/registration/build/Release/registration.node",
+      "native/powerline/build/Release/powerline.node"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis"
+    }
+  }
+}

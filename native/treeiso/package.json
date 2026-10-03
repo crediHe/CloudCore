@@ -1,0 +1,11 @@
+{
+  "name": "treeiso",
+  "version": "1.0.0",
+  "description": "C++ TreeIso（3D 图切分单木分割，语义对齐 CloudCompare qTreeIso 插件与论文 Xi & Hopkinson 2022）node-addon。N-API 编译产物对 Electron 与 Node 通用（ABI 稳定），供渲染进程 require 后贴着 three.js 点云缓冲零拷贝计算，输出逐点单木标签（-1 残点由渲染侧按 minPoints 归拢）。",
+  "private": true,
+  "main": "build/Release/treeiso.node",
+  "scripts": {
+    "build": "node-gyp rebuild"
+  },
+  "license": "MIT"
+}

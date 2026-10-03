@@ -1,0 +1,11 @@
+{
+  "name": "normal-estimate",
+  "version": "1.0.0",
+  "description": "C++ 法向量估计（局部平面 LS / 二次曲面 Quadric + 自动邻域半径）node-addon。编码对齐 CloudCompare ccNormalCompressor（QUANTIZE_LEVEL=6，2 字节码），算法语义对齐 ccNormalVectors::ComputeCloudNormals，差异见 README-REF.md。",
+  "private": true,
+  "main": "build/Release/normal_estimate.node",
+  "scripts": {
+    "build": "node-gyp rebuild"
+  },
+  "license": "MIT"
+}

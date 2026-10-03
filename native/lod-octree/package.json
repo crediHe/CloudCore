@@ -1,0 +1,11 @@
+{
+  "name": "lod-octree",
+  "version": "1.0.0",
+  "description": "C++ LOD 八叉树构建 node-addon（对标 CloudCompare ccPointCloudLOD）。N-API 编译产物对 Electron 与 Node 通用（ABI 稳定），供渲染进程 require 后贴着 three.js 点云缓冲零拷贝建树，支撑「每帧绘制点数与总量解耦」的流式渲染。",
+  "private": true,
+  "main": "build/Release/lod_octree.node",
+  "scripts": {
+    "build": "node-gyp rebuild"
+  },
+  "license": "MIT"
+}

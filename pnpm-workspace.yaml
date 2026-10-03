@@ -1,0 +1,12 @@
+packages:
+  - '.'
+
+allowBuilds:
+  electron: true
+  esbuild: true
+  simple-git-hooks: true
+
+# Disable lockfile supply-chain verification for this template so that
+# recently published packages (e.g. postcss@8.5.16) do not block installation.
+minimumReleaseAge: 0
+trustLockfile: false
