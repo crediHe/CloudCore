@@ -14,6 +14,12 @@ Rendering is three.js; the compute work lives in **13 C++ N-API native modules**
 
 ---
 
+**CSF ground segmentation**
+
+![CSF ground segmentation](./gif/csf-ground-segmentation.gif)
+
+---
+
 **Core algorithms (C++ N-API native modules)**
 
 - Ground segmentation `csf-lidar`: CSF cloth-simulation ground detection with airborne semantics (fast)
@@ -25,6 +31,16 @@ Rendering is three.js; the compute work lives in **13 C++ N-API native modules**
 - RANSAC plane fitting `ransac-plane`: finds the dominant plane, checked against a 3D wireframe, repeatedly peelable
 - RANSAC cylinder fitting `ransac-cylinder`: pipes / poles / trunks, with an automatically estimated or explicitly given axis
 - Registration `registration`: point-pair coarse alignment (Horn quaternion, ≥ 3 point pairs) / ICP refinement / GICP face-to-face refinement
+
+---
+
+**CSF ground segmentation**
+
+![CSF ground segmentation](./gif/csf-ground-segmentation.gif)
+
+**Individual tree segmentation**
+
+![Individual tree segmentation](./gif/treeiso-individual-tree-segmentation.gif)
 
 ## Quick start
 
