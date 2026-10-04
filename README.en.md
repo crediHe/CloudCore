@@ -42,6 +42,10 @@ Rendering is three.js; the compute work lives in **13 C++ N-API native modules**
 
 ![Individual tree segmentation](./gif/treeiso-individual-tree-segmentation.gif)
 
+**Tree info (height / DBH / crown width)**
+
+![Tree info (height / DBH / crown width)](./gif/tree-metrics-height-dbh-crown.gif)
+
 ## Quick start
 
 Requirements: **Windows** + Node.js + pnpm (the repository pins `pnpm@11.9.0` through the `packageManager` field, so corepack picks that version up automatically).
