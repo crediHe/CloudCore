@@ -84,8 +84,10 @@ native/**/*.node
 # 录制 / 截图脚本的临时产物（合成点云、逐帧 PNG 等，不入库）
 tmp-rec/
 
-# Claude Code 机器本地配置（团队共享的配置是 .claude/settings.json）
-.claude/settings.local.json
+# Claude Code 本地配置与备份：整个目录都不入库（原先只忽略 settings.local.json，
+# 结果 .claude/ 下的 CLAUDE.md 备份被提交进了仓库）。
+# 如需团队共享某个配置，用 `!.claude/<文件名>` 单独开例外。
+.claude/
 
 # 参考资料快照：从微信公众号抓取的网页快照与第三方源码示例，已移出仓库
 # （版权与体积考虑）。留条目防止再次被误提交。
