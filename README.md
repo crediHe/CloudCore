@@ -40,6 +40,14 @@
 
 ![树木信息（树高 / 胸径 / 冠幅）](./gif/tree-metrics-height-dbh-crown.gif)
 
+**电力线提取**
+
+![电力线提取](./gif/powerline-extraction.gif)
+
+**点对粗配准 + ICP 精配准**
+
+![点对粗配准 + ICP 精配准](./gif/registration-icp.gif)
+
 ## 快速开始
 
 环境：**Windows** + Node.js + pnpm（仓库在 `package.json` 的 `packageManager` 里锁定 `pnpm@11.9.0`，corepack 会自动取用该版本）。

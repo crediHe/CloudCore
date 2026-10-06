@@ -46,6 +46,14 @@ Rendering is three.js; the compute work lives in **13 C++ N-API native modules**
 
 ![Tree info (height / DBH / crown width)](./gif/tree-metrics-height-dbh-crown.gif)
 
+**Power line extraction**
+
+![Power line extraction](./gif/powerline-extraction.gif)
+
+**Point-pair coarse alignment + ICP refinement**
+
+![Point-pair coarse alignment + ICP refinement](./gif/registration-icp.gif)
+
 ## Quick start
 
 Requirements: **Windows** + Node.js + pnpm (the repository pins `pnpm@11.9.0` through the `packageManager` field, so corepack picks that version up automatically).
