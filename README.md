@@ -28,6 +28,10 @@
 
 ---
 
+**动态高程着色**
+
+![动态高程着色](./gif/elevation-coloring.gif)
+
 **CSF 地面分割**
 
 ![CSF 地面分割](./gif/csf-ground-segmentation.gif)
